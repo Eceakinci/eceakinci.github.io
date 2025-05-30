@@ -16,8 +16,8 @@ export default function Navbar() {
 
                 {/* Desktop Menu */}
                 <ul className="hidden md:flex space-x-6 text-gray-700 font-medium">
-                    <li><a href="#about" className="hover:text-blue-600">About</a></li>
-                    <li><a href="#notes" className="hover:text-blue-600">Notes | Blog</a></li>
+                    <li><a href="/" className="hover:text-blue-600">About</a></li>
+                    <li><a href="/blog" className="hover:text-blue-600">Notes | Blog</a></li>
                     <li><a href="#photo" className="hover:text-blue-600">Photograps</a></li>
                 </ul>
 
@@ -34,8 +34,8 @@ export default function Navbar() {
             {isOpen && (
                 <div className="md:hidden mt-2"> onClick={toggleMenu}
                     <ul className="flex flex-col space-y-4 px-4 text-gray-700 font-medium">
-                        <li><a href="#about" onClick={toggleMenu}>About</a></li>
-                        <li><a href="#notes" onClick={toggleMenu}>Notes | Blog</a></li>
+                        <li><a href="/" onClick={toggleMenu}>About</a></li>
+                        <li><a href="/blog" onClick={toggleMenu}>Notes | Blog</a></li>
                         <li><a href="#photo" onClick={toggleMenu}>Photograps</a></li>
                     </ul>
                 </div>
