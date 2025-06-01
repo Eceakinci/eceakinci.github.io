@@ -16,9 +16,9 @@ export default function Navbar() {
 
                 {/* Desktop Menu */}
                 <ul className="hidden md:flex space-x-6 text-gray-700 font-medium">
-                    <li><a href="/" className="hover:text-blue-600">About</a></li>
-                    <li><a href="/blog" className="hover:text-blue-600">Notes | Blog</a></li>
-                    <li><a href="#photo" className="hover:text-blue-600">Photograps</a></li>
+                    <li><a href="/" className="text-hover">About</a></li>
+                    <li><a href="/blog" className="text-hover">Notes | Blog</a></li>
+                    <li><a href="#photo" className="text-hover">Photograps</a></li>
                 </ul>
 
                 {/* Mobile Menu Icon */}

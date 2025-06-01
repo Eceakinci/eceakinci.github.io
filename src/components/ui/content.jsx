@@ -1,9 +1,9 @@
 "use client";
 
-export default function Content({ children }) {
+export default function Content({ children, className }) {
 
     return (
-        <div className="mt-16">
+        <div className={className}>
             { children }
         </div>
     );
