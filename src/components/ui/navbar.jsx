@@ -26,7 +26,7 @@ export default function Navbar() {
                     onClick={toggleMenu}
                     className="md:hidden text-gray-700 focus:outline-none"
                 >
-                    {isOpen ? <FontAwesomeIcon icon="fa-solid fa-x" /> : "anan"}
+                    {isOpen ? <FontAwesomeIcon icon="fa-solid fa-x" /> : "3 lines"}
                 </button>
             </div>
 

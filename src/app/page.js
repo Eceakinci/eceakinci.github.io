@@ -4,6 +4,7 @@ import AboutContent from "@/content/about.mdx";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faGithub, faKaggle, faLinkedin, faStackOverflow} from "@fortawesome/free-brands-svg-icons";
 import ExperienceTimeline from "@/components/ui/timeline";
+import ExperienceComp from "@/components/ui/timelinecomp";
 export default function Home() {
   return (
       <main className="min-h-screen bg-white text-gray-900 p-6 mt-16">
@@ -31,7 +32,7 @@ export default function Home() {
                   </Content>
               </div>
           </div>
-          <ExperienceTimeline/>
+          <ExperienceComp/>
       </main>
   );
 }
