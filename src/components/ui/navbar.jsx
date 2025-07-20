@@ -12,13 +12,15 @@ export default function Navbar() {
         <nav className="bg-white px-6 py-6 fixed top-0 left-0 right-0 z-50">
             <div className="max-w-4xl mx-auto flex justify-between items-center">
                 {/* Logo */}
-                <div className="text-xl font-bold text-gray-800">MyPortfolio</div>
-
+                <ul>
+                    <li>
+                        <a href="/" className="text-xl font-bold text-gray-800">Home</a>
+                    </li>
+                </ul>
                 {/* Desktop Menu */}
                 <ul className="hidden md:flex space-x-6 text-gray-700 font-medium">
-                    <li><a href="/" className="text-hover">About</a></li>
                     <li><a href="/blog" className="text-hover">Notes | Blog</a></li>
-                    <li><a href="#photo" className="text-hover">Photograps</a></li>
+                    <li><a href="/photographs" className="text-hover">Photographs</a></li>
                 </ul>
 
                 {/* Mobile Menu Icon */}

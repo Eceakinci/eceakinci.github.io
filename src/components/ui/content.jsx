@@ -3,7 +3,7 @@
 export default function Content({ children, className }) {
 
     return (
-        <div className={className}>
+        <div className={className} style={{ marginTop: '52px' }}>
             { children }
         </div>
     );
