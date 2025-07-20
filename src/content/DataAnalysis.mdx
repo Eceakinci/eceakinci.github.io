@@ -1,0 +1,67 @@
+<p style={{fontSize: 24 + 'px'}}>Data Analysis Course Notes</p>
+<br/>
+
++ plot() function and it's parameters
++ If you work with sales and if you observe negative value in sales, it is data error, because sales cannot be negative.
++ Example ggplot usage:
+```r
+ggplot(dataset1, aes(x=adv,y=sales)) +
+  theme_classic() +
+  geom_point()+
+    labs(title="scatterplot with labels", #add the labels
+       subtitle="this is a great subtitle",
+       y="sales (in MONEY)",
+       x="Advertising (in GRP)",
+       caption="source: qkitch dataset")
+```
++ **Compensation line** could be another term for a **trend line** or **line of best fit**, which is used to compensate for (or adjust for) the deviation of data points in a scatterplot. It helps in visualizing the average relationship between two variables, such as sales and advertising spend.
++ **Example**: In a scatterplot of sales versus advertising spend, a compensation line might show how sales generally increase as advertising spend increases.
++ geom_smooth(method="lm", se=F): lm refers linear model, se refers to standart error
++ Save all the global variables like -> save.image("mydata.RData") , it creates a file in working directory with mydata.RData naming
++ We can also go one step further and perform a purchase probability transformation, which we will also address in the lecture. Here, each response is assigned a purchase probability from empirical values of extant studies (e.g., from NIELSEN). E.g. the answer the answer "ja" is assigned the purchase probability 75% (or 0.75), the answer "wahrscheinlich" is only the purchase probability 25%. The other answers are assigned even lower values. Let's code another variable with the purchase probability ("PurchaseProbability"): **ANLAMADIM**
++ **Important** Sys.setlocale("LC_CTYPE","german")
++ You don't need to install packages over and over again, you just need to add it to your local like -> library(tidyverse)
++ **Always consider the distribution of your data when comparing groups, and always show it to your audience!**
++ how can we best show that additional information to an audience of non-experts?
++ One way to do this is to add error bars to the bar charts. Error bars are a graphical representation of the variability of data. They are used to indicate the uncertainty or variability of a measurement. They give a general idea of how precise a measurement is, or conversely, how far from the reported value the true (error free) value might be.
++ Error bars always represent a range that includes a percentage of values.
++ These can be either:
+ * a percentage of the the data; the most common way to do this is to use error bars based on standard deviation (SD) of the data. Here the question answered is: how much of the underlying data is between the error bars (a bit like in a box plot). Or put even more differently: if we measure the next data point, where will it likely be?
+ * or a percentage of the possible population mean values; the most common way to do this is to use error bars based on a confidence interval with the standard error (SE) of the data. Here the question answered is: if we had measured a different sample of the population, where would the next mean value likely be? (this is a confidence interval)
+
+Error bars always assume an underlying distribution of the values, most often a normal distribution or a Students t distribution.
++ Normal distribution assumption: Elimizdeki datayi siraladiktan sonra ortada kalan, yani en cok tekrar eden ya da yogunlugu en cok olan dataya denir.
++ Error bars are used to indicate **the estimated error in a measurement**. In other words, an error bar indicates the uncertainty in a value.
++ How spread the data are around the mean value (small SD bar = low spread, data are clumped around the mean; larger SD bar = larger spread, data are more variable from the mean).
++ The reliability of the mean value as a representative number for the data set.  In other words, how accurately the mean value represents the data (small SD bar = more reliable, larger SD bar = less reliable).  It's important to note that just because you have a larger SD, it does not indicate your data is not valid.  Biological measurements are notoriously variable
++ **Standard deviation (σ)**, a measure of how spread out the measurements are,
+**Number of measurements (n)**
+then the **standard error (SEM)** is calculated as:
+SEM= σ / sqrt(n)
+![[Pasted image 20241101110457.png]]
++ The standard deviation is NOT a statistical test, rather the standard deviation is a measure of variability.
++ The **standard deviation** is the average amount of variability in your dataset. It tells you, on average, how far each value lies from the mean.
++ The **empirical rule(sigma rule),** or the 68-95-99.7 rule, tells you where your values lie:
++ Around 68% of scores are within 1 standard deviation of the mean,
+- Around 95% of scores are within 2 standard deviations of the mean,
+- Around 99.7% of scores are within 3 standard deviations of the mean.
+![[Pasted image 20241101110915.png]]
+![[Pasted image 20241101111046.png]]
+
+**Standart error**: Gives us, tells us how close our guess is to the real answer. ![[Pasted image 20241103111417.png]]
+If SE equals to 2, this means our sample mean might be off by about 2 points from the true average. The bigger data means lesser, standart error.
+**Confidence Interval**, is the range of values that you expect your estimate to fall between a certain percentage of the time if you run your experiment again or re-sample the population in the same way. Mean of your estimate plus and minus the variation in that estimate.
+![[Pasted image 20241103114208.png]]
+![[Pasted image 20241103114300.png]]
+
++ **t.test(dataset3$age, mu=35)** Performs one-sample t-test. Shows if expected mean(mu) is significantly smaller/greater than real mean value.
++ The one-sample t-test tests the following hypotheses:
++ **Null Hypothesis (H₀)**: The mean of `dataset3$age` is equal to 35.
++ **Alternative Hypothesis (H₁)**: The mean of `dataset3$age` is not equal to 35.
+
+For lm() function in R:
+- Use `+` when you believe the variables contribute independently to the outcome.
+- Use `*` when you want to investigate how two variables interact, in addition to their main effects.
+- Basitce, + yaptiginda ayri ayri iki degerin souca etkisine bakarsin. * yaptiginda ayri ayri degerlerini alirsin ve ikisinin birlikte olan etkisini de alirsin.
+
+- Use as.factor() function for categorical variables.
