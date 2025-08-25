@@ -1,6 +1,6 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import { Fira_Sans } from 'next/font/google';
 import "./globals.css";
+import Navbar from "@/components/ui/navbar";
 
 const fira = Fira_Sans({
     subsets: ['latin'],
@@ -8,7 +8,6 @@ const fira = Fira_Sans({
     variable: '--font-fira',
     display: 'swap',
 });
-
 
 export const metadata = {
   title: "Ece Akinci",
@@ -19,7 +18,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={fira.variable}>
       <body>
-        {children}
+      <main className="min-h-screen bg-white text-gray-900 p-6 mt-16">
+          <Navbar></Navbar>
+          {children}
+      </main>
       </body>
     </html>
   );
