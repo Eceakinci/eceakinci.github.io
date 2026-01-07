@@ -11,7 +11,7 @@ const fira = Fira_Sans({
 
 export const metadata = {
   title: "Ece Akinci",
-  description: "Data Scientist",
+  description: "Data Scientist | Frontend Developer",
 };
 
 export default function RootLayout({ children }) {

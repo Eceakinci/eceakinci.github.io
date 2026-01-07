@@ -1,67 +1,211 @@
-<p style={{fontSize: 24 + 'px'}}>Data Analysis Course Notes</p>
-<br/>
 
-+ plot() function and it's parameters
-+ If you work with sales and if you observe negative value in sales, it is data error, because sales cannot be negative.
-+ Example ggplot usage:
+# Data Analysis – Course Notes
+
+## 1. Basic Plotting & Data Sanity
+- The `plot()` function is used for basic visualizations and has various parameters.
+- If you work with **sales data** and observe **negative values**, this indicates a **data error**, because sales cannot be negative.
+
+---
+
+## 2. ggplot2 Basics
+
+### Example: ggplot Usage
 ```r
-ggplot(dataset1, aes(x=adv,y=sales)) +
+ggplot(dataset1, aes(x = adv, y = sales)) +
   theme_classic() +
-  geom_point()+
-    labs(title="scatterplot with labels", #add the labels
-       subtitle="this is a great subtitle",
-       y="sales (in MONEY)",
-       x="Advertising (in GRP)",
-       caption="source: qkitch dataset")
+  geom_point() +
+  labs(
+    title = "Scatterplot with Labels",
+    subtitle = "This is a great subtitle",
+    x = "Advertising (in GRP)",
+    y = "Sales (in MONEY)",
+    caption = "Source: qkitch dataset"
+  )
+````
+
+---
+
+## 3. Trend / Compensation Line
+
+* A **compensation line** is another term for a **trend line** or **line of best fit**.
+* It compensates for deviations of data points and visualizes the average relationship between variables.
+* Example: In a scatterplot of sales versus advertising spend, it shows how sales generally increase as advertising increases.
+<br/>
+### Adding a Linear Trend Line
+
+```r
+geom_smooth(method = "lm", se = FALSE)
 ```
-+ **Compensation line** could be another term for a **trend line** or **line of best fit**, which is used to compensate for (or adjust for) the deviation of data points in a scatterplot. It helps in visualizing the average relationship between two variables, such as sales and advertising spend.
-+ **Example**: In a scatterplot of sales versus advertising spend, a compensation line might show how sales generally increase as advertising spend increases.
-+ geom_smooth(method="lm", se=F): lm refers linear model, se refers to standart error
-+ Save all the global variables like -> save.image("mydata.RData") , it creates a file in working directory with mydata.RData naming
-+ We can also go one step further and perform a purchase probability transformation, which we will also address in the lecture. Here, each response is assigned a purchase probability from empirical values of extant studies (e.g., from NIELSEN). E.g. the answer the answer "ja" is assigned the purchase probability 75% (or 0.75), the answer "wahrscheinlich" is only the purchase probability 25%. The other answers are assigned even lower values. Let's code another variable with the purchase probability ("PurchaseProbability"): **ANLAMADIM**
-+ **Important** Sys.setlocale("LC_CTYPE","german")
-+ You don't need to install packages over and over again, you just need to add it to your local like -> library(tidyverse)
-+ **Always consider the distribution of your data when comparing groups, and always show it to your audience!**
-+ how can we best show that additional information to an audience of non-experts?
-+ One way to do this is to add error bars to the bar charts. Error bars are a graphical representation of the variability of data. They are used to indicate the uncertainty or variability of a measurement. They give a general idea of how precise a measurement is, or conversely, how far from the reported value the true (error free) value might be.
-+ Error bars always represent a range that includes a percentage of values.
-+ These can be either:
- * a percentage of the the data; the most common way to do this is to use error bars based on standard deviation (SD) of the data. Here the question answered is: how much of the underlying data is between the error bars (a bit like in a box plot). Or put even more differently: if we measure the next data point, where will it likely be?
- * or a percentage of the possible population mean values; the most common way to do this is to use error bars based on a confidence interval with the standard error (SE) of the data. Here the question answered is: if we had measured a different sample of the population, where would the next mean value likely be? (this is a confidence interval)
 
-Error bars always assume an underlying distribution of the values, most often a normal distribution or a Students t distribution.
-+ Normal distribution assumption: Elimizdeki datayi siraladiktan sonra ortada kalan, yani en cok tekrar eden ya da yogunlugu en cok olan dataya denir.
-+ Error bars are used to indicate **the estimated error in a measurement**. In other words, an error bar indicates the uncertainty in a value.
-+ How spread the data are around the mean value (small SD bar = low spread, data are clumped around the mean; larger SD bar = larger spread, data are more variable from the mean).
-+ The reliability of the mean value as a representative number for the data set.  In other words, how accurately the mean value represents the data (small SD bar = more reliable, larger SD bar = less reliable).  It's important to note that just because you have a larger SD, it does not indicate your data is not valid.  Biological measurements are notoriously variable
-+ **Standard deviation (σ)**, a measure of how spread out the measurements are,
-**Number of measurements (n)**
-then the **standard error (SEM)** is calculated as:
-SEM= σ / sqrt(n)
-![[Pasted image 20241101110457.png]]
-+ The standard deviation is NOT a statistical test, rather the standard deviation is a measure of variability.
-+ The **standard deviation** is the average amount of variability in your dataset. It tells you, on average, how far each value lies from the mean.
-+ The **empirical rule(sigma rule),** or the 68-95-99.7 rule, tells you where your values lie:
-+ Around 68% of scores are within 1 standard deviation of the mean,
-- Around 95% of scores are within 2 standard deviations of the mean,
-- Around 99.7% of scores are within 3 standard deviations of the mean.
-![[Pasted image 20241101110915.png]]
-![[Pasted image 20241101111046.png]]
+* `lm`: linear model
+* `se`: standard error (confidence band)
 
-**Standart error**: Gives us, tells us how close our guess is to the real answer. ![[Pasted image 20241103111417.png]]
-If SE equals to 2, this means our sample mean might be off by about 2 points from the true average. The bigger data means lesser, standart error.
-**Confidence Interval**, is the range of values that you expect your estimate to fall between a certain percentage of the time if you run your experiment again or re-sample the population in the same way. Mean of your estimate plus and minus the variation in that estimate.
-![[Pasted image 20241103114208.png]]
-![[Pasted image 20241103114300.png]]
+---
 
-+ **t.test(dataset3$age, mu=35)** Performs one-sample t-test. Shows if expected mean(mu) is significantly smaller/greater than real mean value.
-+ The one-sample t-test tests the following hypotheses:
-+ **Null Hypothesis (H₀)**: The mean of `dataset3$age` is equal to 35.
-+ **Alternative Hypothesis (H₁)**: The mean of `dataset3$age` is not equal to 35.
+## 4. Saving Workspace & Environment Settings
 
-For lm() function in R:
-- Use `+` when you believe the variables contribute independently to the outcome.
-- Use `*` when you want to investigate how two variables interact, in addition to their main effects.
-- Basitce, + yaptiginda ayri ayri iki degerin souca etkisine bakarsin. * yaptiginda ayri ayri degerlerini alirsin ve ikisinin birlikte olan etkisini de alirsin.
+* Save all global variables:
 
-- Use as.factor() function for categorical variables.
+```r
+save.image("mydata.RData")
+```
+
+* <span>Creates an `.RData` file in the working directory.</span>
+
+* <span>Set locale to German (important for special characters):</span>
+
+```r
+    Sys.setlocale("LC_CTYPE", "german")
+```
+
+* You do **not** need to install packages repeatedly:
+
+```r
+    library(tidyverse)
+```
+
+---
+
+## 5. Purchase Probability Transformation
+
++ Survey responses can be transformed into **purchase probabilities** using empirical values from prior studies (e.g., NIELSEN).
++ Each answer option is mapped to a numeric probability.
++`"ja"` → 0.75
++ `"wahrscheinlich"` → 0.25
++ Other answers receive lower values.
++ A new variable (e.g., `PurchaseProbability`) is created to represent this numeric likelihood of purchase.
+
+---
+
+## 6. Data Distribution & Visualization
+
+* **Always consider the distribution of your data when comparing groups.**
+* Always **show the distribution** to your audience, especially for non-experts.
+
+### Showing Uncertainty: Error Bars
+
+* Error bars visually represent **variability or uncertainty** in the data.
+* They indicate how precise a measurement is or how far the true value might be from the estimate.
+* Error bars always represent a **range** that includes a percentage of values.
+
+---
+
+## 7. Types of Error Bars
+
+### 1. Standard Deviation (SD)
+
+* Represents a percentage of the data.
+* Answers the question:
+*Where will the next data point likely be?*
+* Similar interpretation to a boxplot.
+
+### 2. Standard Error / Confidence Interval (SE / CI)
+
+* Represents a percentage of possible population mean values.
+* Answers the question:
+*If we took another sample, where would the mean likely be?*
+* Used to build **confidence intervals**.
+
+> Error bars assume an underlying distribution, usually a **normal distribution** or **Student’s t distribution**.
+
+---
+
+## 8. Normal Distribution
+
+* After sorting the data, the most frequent or densest values are located around the center (mean).
+* Also called the **bell curve**.
+
+### Empirical Rule (68–95–99.7 Rule)
+
+* ~68% of values lie within **±1 SD** of the mean
+* ~95% of values lie within **±2 SD** of the mean
+* ~99.7% of values lie within **±3 SD** of the mean
+
+---
+
+## 9. Standard Deviation (SD)
+
++ **Not a statistical test**.
++ Measures **variability** in the data.
++ Indicates:
+    + How spread out data points are around the mean.
+    + How reliable the mean is as a representative value.
+    + Large SD ≠ invalid data (e.g., biological data is often highly variable).
+
+---
+
+## 10. Standard Error (SE / SEM)
+
++ Indicates how close the sample mean is to the true population mean.
++ Calculated as:
+
+```jupyter
+SEM = σ / √n
+```
+Where:
++ <span>`σ` = standard deviation</span>
++ <span>`n` = number of observations</span>
++ <span>Larger sample size -> smaller standard error.</span>
+
++ <span>Example: If `SE = 2`, the sample mean may differ from the true mean by ~2 units.</span>
+
+---
+
+## 11. Confidence Interval (CI)
+
++ A **range of values** that likely contains the true population parameter.
++ Calculated as:
+
+```
+    estimate ± variation
+```
+
++ Interpreted as:
+*If we repeated the experiment many times, the true value would fall within this range a certain percentage of the time.*
+
+---
+
+## 12. One-Sample t-Test
+
+```r
+t.test(dataset3$age, mu = 35)
+```
+
+* Tests whether the sample mean differs significantly from a given value (`mu`).
+
+### Hypotheses
+
+* **Null Hypothesis (H₀):** mean(age) = 35
+* **Alternative Hypothesis (H₁):** mean(age) ≠ 35
+
+---
+
+## 13. Linear Models in R (`lm()`)
+
+* Use `+` to model **independent effects**:
+
+```r
+    y ~ x1 + x2
+```
+
+* Use `*` to include **interaction effects**:
+
+```r
+    y ~ x1 * x2
+```
+
+Explanation:
+
+* `+`: effects of variables separately
+* `*`: separate effects **and** their combined interaction effect
+
+---
+
+## 14. Categorical Variables
+
+* Use `as.factor()` for categorical variables in models:
+
+```r
+    as.factor(variable)
+```
+
