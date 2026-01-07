@@ -12,36 +12,33 @@ export default function Navbar() {
         <nav className="bg-white px-6 py-6 fixed top-0 left-0 right-0 z-50">
             <div className="max-w-4xl mx-auto flex justify-between items-center">
                 {/* Logo */}
-                <ul>
-                    <li>
-                        <a href="/" className="text-xl font-bold text-gray-800">Home</a>
-                    </li>
-                </ul>
-                {/* Desktop Menu */}
-                <ul className="hidden md:flex space-x-6 text-gray-700 font-medium">
-                    <li><a href="/blog" className="text-hover">Notes | Blog</a></li>
-                    <li><a href="/photographs" className="text-hover">Photographs</a></li>
-                </ul>
+                <a href="/" className="text-xl font-bold text-gray-800">Home</a>
 
-                {/* Mobile Menu Icon */}
-                <button
-                    onClick={toggleMenu}
-                    className="md:hidden text-gray-700 focus:outline-none"
-                >
-                    {isOpen ? <FontAwesomeIcon icon="fa-solid fa-x" /> : "3 lines"}
-                </button>
+                {/* Desktop Menu */}
+                {/*<ul className="hidden md:flex space-x-6 text-gray-700 font-medium">*/}
+                {/*    <li><a href="/blog" className="text-hover">Notes | Blog</a></li>*/}
+                {/*    <li><a href="/photographs" className="text-hover">Photographs</a></li>*/}
+                {/*</ul>*/}
+
+                {/*/!* Mobile Menu Icon *!/*/}
+                {/*<button*/}
+                {/*    onClick={toggleMenu}*/}
+                {/*    className="md:hidden text-gray-700 focus:outline-none"*/}
+                {/*>*/}
+                {/*    {isOpen ? <FontAwesomeIcon icon="fa-solid fa-x" /> : "3 lines"}*/}
+                {/*</button>*/}
             </div>
 
             {/* Mobile Menu */}
-            {isOpen && (
-                <div className="md:hidden mt-2"> onClick={toggleMenu}
-                    <ul className="flex flex-col space-y-4 px-4 text-gray-700 font-medium">
-                        <li><a href="/" onClick={toggleMenu}>About</a></li>
-                        <li><a href="/blog" onClick={toggleMenu}>Notes | Blog</a></li>
-                        <li><a href="#photo" onClick={toggleMenu}>Photograps</a></li>
-                    </ul>
-                </div>
-            )}
+            {/*{isOpen && (*/}
+            {/*    <div className="md:hidden mt-2"> onClick={toggleMenu}*/}
+            {/*        <ul className="flex flex-col space-y-4 px-4 text-gray-700 font-medium">*/}
+            {/*            <li><a href="/" onClick={toggleMenu}>About</a></li>*/}
+            {/*            <li><a href="/blog" onClick={toggleMenu}>Notes | Blog</a></li>*/}
+            {/*            <li><a href="#photo" onClick={toggleMenu}>Photograps</a></li>*/}
+            {/*        </ul>*/}
+            {/*    </div>*/}
+            {/*)}*/}
         </nav>
     );
 }

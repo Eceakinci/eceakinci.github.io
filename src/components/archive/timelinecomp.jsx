@@ -38,7 +38,7 @@ const ExperienceComp= () => {
     return (
         <div className=" mx-auto px-4 py-10">
             <h2 className="text-2xl font-bold mb-8 text-center">Experience Timeline</h2>
-            <ul className="flex justify-center items-center list-none" id="timeline">
+            <ul className="flex justify-center items-center" id="timeline">
                 {experiences.map((exp, idx) => (
                     <li key={idx} className="li complete">
                         <div className="flex flex-col items-center mb-4 px-8 relative">

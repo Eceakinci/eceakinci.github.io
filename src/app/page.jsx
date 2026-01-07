@@ -3,12 +3,13 @@ import AboutContent from "@/content/about.mdx";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faGithub, faKaggle, faLinkedin, faStackOverflow} from "@fortawesome/free-brands-svg-icons";
 import BasicTimeline from "@/components/ui/basictimeline";
+import ParentCard from "@/components/ui/parentcard";
 
 export default function Home() {
     return (
         <>
-            <div className='grid grid-cols-6 justify-items-center'>
-                <div className='flex col-start-2 col-span-4 items-center gap-6'>
+            <div className='grid grid-cols-6 justify-items-center mt-16'>
+                <div className='flex flex-col col-start-2 col-span-4 items-center gap-6 md:flex-row'>
                     <img className='max-w-2xs' src="/ece_img.png" alt="" />
                     <Content className={'content-center text-justify'}>
                         <AboutContent/>
@@ -31,6 +32,7 @@ export default function Home() {
                 </div>
             </div>
             <BasicTimeline />
+            <ParentCard />
         </>
     )
 }

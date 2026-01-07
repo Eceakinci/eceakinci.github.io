@@ -16,9 +16,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={fira.variable}>
-      <body>
-      <main className="min-h-screen bg-white text-gray-900 p-6 mt-16">
+    <html lang="en" className={fira.variable} suppressHydrationWarning>
+    <head>
+        <link rel="icon" href="/favicon.ico" />
+    </head>
+      <body suppressHydrationWarning>
+      <main className="min-h-screen bg-white text-gray-900 p-6">
           <Navbar></Navbar>
           {children}
       </main>
