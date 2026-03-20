@@ -7,8 +7,8 @@ const experiences = [
         description: "● Gained knowledge in <b>Bayesian models</b>, Kalman/particle filters, causal inference, and generative models.\n" +
             "● Used <b>Fourier transform</b>/Fast Fourier Transform for neural signal and time-series analysis in practical applications.\n" +
             "● Applied <b>data analysis</b> and visualization techniques using <b>Python, R and SQL</b>.\n" +
-            "● Worked on projects involving sentiment analysis, preference modeling, and decision systems." +
-        "● Strengthened foundation in mathematics: linear algebra, calculus, probability, statistics.\n",
+            "● Worked on projects involving sentiment analysis, preference modeling, and decision systems.\n" +
+            "● Strengthened foundation in mathematics: linear algebra, calculus, probability, statistics.\n",
         startDate: "Oct 2024",
         endDate: "Present"
     },
@@ -61,8 +61,10 @@ const experiences = [
 const BasicTimeline= () => {
     return (
         <div className="mx-auto px-4 py-10">
-            <h2 className="text-2xl font-bold mb-8 text-center">Experience Timeline</h2>
-            <div className="md:grid md:grid-cols-7 md:items-center ">
+            <div className=" md:grid grid-cols-7 ">
+                <h2 className="text-2xl font-bold mb-8 col-start-2">Experience</h2>
+            </div>
+            <div className="md:grid md:grid-cols-7 items-center ">
                 <div className="flex flex-col col-start-2 col-span-5 justify-center" id="timeline">
                     {experiences.map((exp, idx) => (
                         <div key={idx} className="">
