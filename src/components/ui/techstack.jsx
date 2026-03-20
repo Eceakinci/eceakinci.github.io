@@ -43,12 +43,9 @@ const techs = [
 
 const Techstack = () => {
     return(
-        <div className="mx-auto px-4 py-10">
-            <div className=" md:grid grid-cols-7 ">
-                <h2 className="text-2xl font-bold mb-8 col-start-2">Tech Stack</h2>
-            </div>
-            <div className="md:grid grid-cols-7 items-center">
-                <div className="col-start-2 col-span-6">
+        <>
+            <h2 className="text-2xl font-bold mb-4">Tech Stack</h2>
+                <div className="pb-12">
                     {techs.map((group) => (
                         <div className="flex py-3" key={group.category}>
                             <h3 className="w-36 content-center">{group.category}</h3>
@@ -63,10 +60,7 @@ const Techstack = () => {
                         </div>
                     ))}
                 </div>
-
-            </div>
-
-        </div>
+        </>
     )
 }
 

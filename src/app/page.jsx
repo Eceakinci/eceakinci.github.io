@@ -3,14 +3,14 @@ import AboutContent from "@/content/about.mdx";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faGithub, faKaggle, faLinkedin, faStackOverflow} from "@fortawesome/free-brands-svg-icons";
 import BasicTimeline from "@/components/ui/basictimeline";
-import ParentCard from "@/components/ui/parentcard";
-import Techstack from "@/components/ui/techstack";
+import Projects from "@/components/ui/projects";
+import TechStack from "@/components/ui/techstack";
 
 export default function Home() {
     return (
         <>
-            <div className='grid grid-cols-6 justify-items-center mt-16'>
-                <div className='flex flex-col col-start-2 col-span-4 items-center gap-6 md:flex-row'>
+            <div className='grid grid-cols-7 justify-items-center mt-16'>
+                <div className='flex flex-col col-start-1 col-span-7 items-center gap-6 md:flex-row'>
                     <img className='max-w-2xs self-start' src="/ece_img.png" alt="" />
                     <Content className={'content-center text-justify'}>
                         <h1>Ece Akinci</h1>
@@ -35,9 +35,9 @@ export default function Home() {
                     </Content>
                 </div>
             </div>
-            <Techstack />
+            <TechStack />
+            <Projects />
             <BasicTimeline />
-            <ParentCard />
         </>
     )
 }

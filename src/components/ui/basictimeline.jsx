@@ -60,42 +60,38 @@ const experiences = [
 
 const BasicTimeline= () => {
     return (
-        <div className="mx-auto px-4 py-10">
-            <div className=" md:grid grid-cols-7 ">
-                <h2 className="text-2xl font-bold mb-8 col-start-2">Experience</h2>
-            </div>
+        <>
+            <h2 className="text-2xl font-bold mb-8 col-start-2">Experience</h2>
             <div className="md:grid md:grid-cols-7 items-center ">
-                <div className="flex flex-col col-start-2 col-span-5 justify-center" id="timeline">
+                <div className="flex flex-col col-span-7 justify-center" id="timeline">
                     {experiences.map((exp, idx) => (
-                        <div key={idx} className="">
-                            <div className="md:grid md:grid-cols-8 items-center mb-4 relative">
-                                <div className="flex justify-between md:hidden">
-                                    <div className="col-span-2">
-                                        <p className="text-sm"><b>{exp.title}</b></p>
-                                        <p className="text-sm">{exp.company}</p>
-                                    </div>
-                                    <div className="col-span-1 text-center content-center h-full pr-4 text-sm text-gray-500 ">
-                                        <p>{exp.startDate} - {exp.endDate}</p>
-                                    </div>
+                        <div className="md:grid md:grid-cols-8 items-center mb-4 relative" key={idx}>
+                            <div className="flex justify-between md:hidden">
+                                <div className="col-span-2">
+                                    <p className="text-sm"><b>{exp.title}</b></p>
+                                    <p className="text-sm">{exp.company}</p>
                                 </div>
-                                <div className="hidden md:block col-span-1 text-center content-center h-full border-r text-sm text-gray-500 ">
-                                    <p>{exp.endDate}</p>
-                                    <p>-</p>
-                                    <p>{exp.startDate}</p>
+                                <div className="col-span-1 text-center content-center h-full pr-4 text-sm text-gray-500 ">
+                                    <p>{exp.startDate} - {exp.endDate}</p>
                                 </div>
-                                <div className="hidden h-full content-center border-b-1 border-gray-500 md:block col-span-2">
-                                    <p className="text-sm ml-2">{exp.title}</p>
-                                    <p className="text-sm ml-2">{exp.company}</p>
-                                </div>
-                                <div className="mt-4 h-full md:mt-0 col-span-5 whitespace-pre-line border-b-1 border-gray-500 ">
-                                    <p className="text-sm mb-2" dangerouslySetInnerHTML={{ __html: exp.description }} />
-                                </div>
+                            </div>
+                            <div className="hidden md:block col-span-1 text-center content-center h-full border-r text-sm text-gray-500 ">
+                                <p>{exp.endDate}</p>
+                                <p>-</p>
+                                <p>{exp.startDate}</p>
+                            </div>
+                            <div className="hidden h-full content-center border-b-1 border-gray-500 md:block col-span-2">
+                                <p className="text-sm ml-2">{exp.title}</p>
+                                <p className="text-sm ml-2">{exp.company}</p>
+                            </div>
+                            <div className="mt-4 h-full md:mt-0 col-span-5 whitespace-pre-line border-b-1 border-gray-500 ">
+                                <p className="text-sm mb-2" dangerouslySetInnerHTML={{ __html: exp.description }} />
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
-        </div>
+        </>
     )
 };
 

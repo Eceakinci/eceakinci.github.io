@@ -1,13 +1,14 @@
-import { Roboto_Serif } from 'next/font/google'
+import { Plus_Jakarta_Sans } from 'next/font/google'
 import "./globals.css";
 import Navbar from "@/components/ui/navbar";
 
-const robotoSerif = Roboto_Serif({
+
+const jakarta = Plus_Jakarta_Sans({
     subsets: ['latin'],
     weight: ['400', '500', '600', '700'],
-    variable: '--font-roboto-serif',
+    variable: '--font-jakarta',
     display: 'swap',
-});
+})
 
 export const metadata = {
   title: "Ece Akinci",
@@ -16,14 +17,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={robotoSerif.variable} suppressHydrationWarning>
+    <html lang="en" className={jakarta.variable} suppressHydrationWarning>
     <head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
         <title>{metadata.title}</title>
     </head>
       <body suppressHydrationWarning>
-      <main className="min-h-screen bg-white text-gray-900 p-6">
+      <main className="mx-auto my-6 max-w-4xl bg-white text-gray-900 p-6">
           <Navbar></Navbar>
           {children}
       </main>
