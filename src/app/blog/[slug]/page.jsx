@@ -1,5 +1,3 @@
-// app/blog/[slug]/page.jsx
-import { getAllPosts } from '@/lib/mdx'
 import BlogContent from './BlogContent'
 
 import DataAnalysis from "@/content/DataAnalysis.mdx";
