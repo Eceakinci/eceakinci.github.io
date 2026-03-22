@@ -1,5 +1,3 @@
-// app/blog/[slug]/page.jsx
-import { getAllPosts } from '@/lib/mdx'
 import BlogContent from './BlogContent'
 
 import DataAnalysis from "@/content/DataAnalysis.mdx";
@@ -11,10 +9,7 @@ const posts = {
 }
 
 export async function generateStaticParams() {
-    const allPosts = getAllPosts()
-    return allPosts.map((post) => ({
-        slug: post.slug,
-    }))
+    return Object.keys(posts).map((slug) => ({ slug }))
 }
 
 export default function BlogPostPage({ params }) {
