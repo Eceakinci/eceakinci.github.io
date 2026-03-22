@@ -3,22 +3,18 @@ import Card from "@/components/ui/cardcomp";
 
 const blogContent = [
     {
-        name: "Data Analysis Course Notes ",
-        url: "blog/data-analysis",
-        description: "plot() function and it's parameters\n" +
-            "If you work with sales and if you observe negative value in sales, it is data error, because sales cannot be negative."
+        name: "Volleyball Stats Scraper",
+        url: "https://github.com/Eceakinci/MatchScraping",
+        image: "/projects/volleyball_img.jpg",
+        description: "A web scraper built to extract and clean player statistics from the FIVB Volleyball World" +
+            " Championship website."
     },
     {
-        name: "Neural Signal Analysis Course Notes",
-        url: "blog/neural-signal",
-        description: "plot() function and it's parameters\n" +
-            "If you work with sales and if you observe negative value in sales, it is data error, because sales cannot be negative."
-    },
-    {
-        name: "Neural Signal Analysis Course Notes",
-        url: "blog/neural-signal",
-        description: "plot() function and it's parameters\n" +
-            "If you work with sales and if you observe negative value in sales, it is data error, because sales cannot be negative."
+        name: "Mind Mapping",
+        url: "https://github.com/Eceakinci/MindMapping",
+        image: "/projects/mindmap_img.jpg",
+        description: "A project for self-directed vocabulary expansion that also tracks statistics and incorporates" +
+            " general computer science concepts. "
     }
     ]
 
