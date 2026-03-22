@@ -1,5 +1,6 @@
 'use client'
 import { use } from 'react'
+import { getAllPosts } from '@/lib/mdx'
 
 import DataAnalysis from "@/content/DataAnalysis.mdx";
 import PerceptionAction from "@/content/PerceptionAction.mdx";
@@ -7,6 +8,13 @@ import PerceptionAction from "@/content/PerceptionAction.mdx";
 const posts = {
     "data-analysis": DataAnalysis,
     "perception-action": PerceptionAction,
+}
+
+export async function generateStaticParams() {
+    const posts = getAllPosts()
+    return posts.map((post) => ({
+        slug: post.slug,
+    }))
 }
 
 export default function BlogPostPage({ params }) {
