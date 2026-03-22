@@ -1,6 +1,6 @@
-'use client'
-import { use } from 'react'
+// app/blog/[slug]/page.jsx
 import { getAllPosts } from '@/lib/mdx'
+import BlogContent from './BlogContent'
 
 import DataAnalysis from "@/content/DataAnalysis.mdx";
 import PerceptionAction from "@/content/PerceptionAction.mdx";
@@ -11,28 +11,13 @@ const posts = {
 }
 
 export async function generateStaticParams() {
-    const posts = getAllPosts()
-    return posts.map((post) => ({
+    const allPosts = getAllPosts()
+    return allPosts.map((post) => ({
         slug: post.slug,
     }))
 }
 
 export default function BlogPostPage({ params }) {
-    const { slug } = use(params)
-
-    const PostComponent = posts[slug]
-
-    if (!PostComponent) {
-        return <div className='mt-16'>
-            <p>Post not found: {slug}</p>
-        </div>
-    }
-
-    return (
-        <div className='flex flex-col justify-items-center mt-16 '>
-            <div className='flex flex-col self-center max-w-4xl bg-neutral-100 p-8 rounded-3xl'>
-                <PostComponent />
-            </div>
-        </div>
-    )
+    const PostComponent = posts[params.slug]
+    return <BlogContent PostComponent={PostComponent} slug={params.slug} />
 }
