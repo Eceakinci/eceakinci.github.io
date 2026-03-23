@@ -23,7 +23,7 @@ function Projects({}) {
     return (
         <div className="pb-12">
             <h2 className="text-2xl font-bold mb-4">Recent Projects</h2>
-            <div className="grid grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {blogContent.map((blog, idx) => (
                     <Card blogContent={blog} key={idx} />
                 ))}

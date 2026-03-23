@@ -11,11 +11,11 @@ export default function Home() {
         <>
             <div className='grid grid-cols-7 justify-items-center mt-16'>
                 <div className='flex flex-col col-start-1 col-span-7 items-center gap-6 md:flex-row'>
-                    <img className='max-w-2xs self-start' src="/ece_img.png" alt="" />
+                    <img className='hidden md:block w-full object-cover max-w-2xs self-start' src="/ece_img.png" alt="" />
                     <Content className={'content-center text-justify'}>
                         <h1>Ece Akinci</h1>
-                        <h2 className="text-sm">Data Science Newbie | Former Frontend Developer</h2>
-                        <p className="text-sm text-stone-600 mb-4">Cottbus, Germany</p>
+                        <h2 className="text-sm">Frontend Developer transitioning into AI & Data Science</h2>
+                        <p className="text-sm text-stone-600 mb-4">Berlin, Germany</p>
                         <AboutContent/>
                         <hr className='w-64 justify-self-center m-4'/>
                         <div className='flex gap-6 justify-center mt-4'>
