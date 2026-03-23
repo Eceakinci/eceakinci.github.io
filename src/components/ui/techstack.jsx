@@ -26,7 +26,7 @@ const techs = [
             { iconPath: "devicon-nextjs-plain", iconName: "Next.js" },
             { iconPath: "devicon-jquery-plain", iconName: "jQuery" },
             { iconPath: "devicon-tailwindcss-plain", iconName: "Tailwind CSS" },
-            { iconPath: "devicon-sass-plain", iconName: "SCSS" },
+            { iconPath: "devicon-sass-plain", iconName: "Sass" },
             { iconPath: "devicon-bootstrap-plain", iconName: "Bootstrap" },
         ]
     },
@@ -44,15 +44,15 @@ const techs = [
 const Techstack = () => {
     return(
         <>
-            <h2 className="text-2xl font-bold mb-4">Tech Stack</h2>
+            <h2 className="text-2xl font-bold my-4 md:mt-0">Tech Stack</h2>
                 <div className="pb-12">
                     {techs.map((group) => (
-                        <div className="flex py-3" key={group.category}>
-                            <h3 className="w-36 content-center">{group.category}</h3>
-                            <div className="flex flex-wrap gap-4">
+                        <div className="flex flex-col py-1.5 md:py-3 md:flex-row" key={group.category}>
+                            <h3 className="!text-sm content-center mb-1 md:w-30 md:mb-0">{group.category}</h3>
+                            <div className="flex flex-wrap gap-1 md:gap-4">
                                 {group.items.map((tech) => (
-                                    <div key={tech.iconName} className="flex flex-col items-center gap-1">
-                                        <i className={`${tech.iconPath} text-3xl`} />
+                                    <div key={tech.iconName} className="border-1 rounded-lg py-0.5 px-1 border-stone-300 flex flex-col items-center gap-1 md:border-0 md:">
+                                        <i className={`${tech.iconPath} hidden text-3xl md:block`} />
                                         <span className="text-xs text-stone-600">{tech.iconName}</span>
                                     </div>
                                 ))}

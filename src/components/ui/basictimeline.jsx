@@ -4,9 +4,9 @@ const experiences = [
     {
         title: "M.Sc. Artificial Intelligence ",
         company: "Brandenburg University of Technology",
-        description: "● Gained knowledge in <b>Bayesian models</b>, Kalman/particle filters, causal inference, and generative models.\n" +
-            "● Used <b>Fourier transform</b>/Fast Fourier Transform for neural signal and time-series analysis in practical applications.\n" +
-            "● Applied <b>data analysis</b> and visualization techniques using <b>Python, R and SQL</b>.\n" +
+        description: "● Gained knowledge in Bayesian models, Kalman/particle filters, causal inference, and generative models.\n" +
+            "● Used Fourier transform/Fast Fourier Transform for neural signal and time-series analysis in practical applications.\n" +
+            "● Applied data analysis and visualization techniques using Python, R and SQL.\n" +
             "● Worked on projects involving sentiment analysis, preference modeling, and decision systems.\n" +
             "● Strengthened foundation in mathematics: linear algebra, calculus, probability, statistics.\n",
         startDate: "Oct 2024",
@@ -15,7 +15,7 @@ const experiences = [
     {
         title: "Frontend Developer",
         company: "Feature/Mind Inc.",
-        description: "● Developed responsive, mobile-first layouts and components, using jQuery, Sass, and SCSS.\n" +
+        description: "● Developed responsive, mobile-first layouts and components, using jQuery, and SCSS/Sass.\n" +
             "● Converted Figma designs into interactive web components, which reduced page load times by 15% and improved user engagement.\n" +
             "● Enhanced accessibility across all e-commerce pages, ensuring 100% coverage and compliance.\n" +
             "● Participated in agile development using Jira, with all processes and code documented in Confluence.\n" +
@@ -29,7 +29,7 @@ const experiences = [
         description: "● Created RESTful API calls between old and new API endpoints to integrate them with the system using C# and .NET Core.\n" +
             "● Rewrote the company's product from .NET Core to Next.js and React.js.\n" +
             "● Maintained 7 e-commerce websites, using Git, Azure, and Jira to manage workflow and deployment.\n" +
-            "● Translated 50+ Figma and Adobe XD design files into fully responsive and interactive user interfaces using Tailwind CSS, Bootstrap, SCSS, and Sass, ensuring pixel-perfect accuracy and cross-browser compatibility.\n" +
+            "● Translated 50+ Figma and Adobe XD design files into fully responsive and interactive user interfaces using Tailwind CSS, Bootstrap, SCSS/Sass, ensuring pixel-perfect accuracy and cross-browser compatibility.\n" +
             "● Performed bug fixing and end-to-end testing with Cypress.\n",
         startDate: "Oct 2021",
         endDate: "Aug 2022"
@@ -37,7 +37,7 @@ const experiences = [
     {
         title: "Intern",
         company: "DePauli AG",
-        description: "● Implemented new designs of 7 e-commerce websites and their static pages by using C#, .NET Core, jQuery, Sass, SCSS, Bootstrap, Jira, MS Azure, Git. ",
+        description: "● Implemented new designs of 7 e-commerce websites and their static pages by using C#, .NET Core, jQuery, SCSS/Sass, Bootstrap, Jira, MS Azure, Git. ",
         startDate: "Jul 2021",
         endDate: "Sep 2021"
     },
@@ -68,7 +68,7 @@ const BasicTimeline= () => {
                         <div className="md:grid md:grid-cols-8 items-center mb-4 relative" key={idx}>
                             <div className="flex justify-between md:hidden">
                                 <div className="col-span-2">
-                                    <p className="text-sm"><b>{exp.title}</b></p>
+                                    <p className="text-sm font-semibold">{exp.title}</p>
                                     <p className="text-sm">{exp.company}</p>
                                 </div>
                                 <div className="col-span-1 text-center content-center h-full pr-4 text-sm text-gray-500 ">
@@ -81,11 +81,11 @@ const BasicTimeline= () => {
                                 <p>{exp.startDate}</p>
                             </div>
                             <div className="hidden h-full content-center border-b-1 border-gray-500 md:block col-span-2">
-                                <p className="text-sm ml-2">{exp.title}</p>
+                                <p className="text-sm ml-2 font-semibold">{exp.title}</p>
                                 <p className="text-sm ml-2">{exp.company}</p>
                             </div>
                             <div className="mt-4 h-full md:mt-0 col-span-5 whitespace-pre-line border-b-1 border-gray-500 ">
-                                <p className="text-sm mb-2" dangerouslySetInnerHTML={{ __html: exp.description }} />
+                                <p className="text-sm mb-3 md:mb-4" dangerouslySetInnerHTML={{ __html: exp.description }} />
                             </div>
                         </div>
                     ))}
