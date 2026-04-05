@@ -10,7 +10,9 @@ const experiences = [
             "● Worked on projects involving sentiment analysis, preference modeling, and decision systems.\n" +
             "● Strengthened foundation in mathematics: linear algebra, calculus, probability, statistics.\n",
         startDate: "Oct 2024",
-        endDate: "Present"
+        endDate: "Present",
+        logo: "/logo/btu.jpg",
+        logoAlt: "Brandenburg University of Technology"
     },
     {
         title: "Frontend Developer",
@@ -21,7 +23,10 @@ const experiences = [
             "● Participated in agile development using Jira, with all processes and code documented in Confluence.\n" +
             "● Handled Salesforce integrations and maintained version control with Git and BitBucket including CI/CD processes.",
         startDate: "Sep 2022",
-        endDate: "Sep 2024"
+        endDate: "Sep 2024",
+        logo: "/logo/featuremind.png",
+        logoAlt: "Feature/Mind"
+
     },
     {
         title: "Frontend Developer",
@@ -32,28 +37,37 @@ const experiences = [
             "● Translated 50+ Figma and Adobe XD design files into fully responsive and interactive user interfaces using Tailwind CSS, Bootstrap, SCSS/Sass, ensuring pixel-perfect accuracy and cross-browser compatibility.\n" +
             "● Performed bug fixing and end-to-end testing with Cypress.\n",
         startDate: "Oct 2021",
-        endDate: "Aug 2022"
+        endDate: "Aug 2022",
+        logo: "/logo/depauli.svg",
+        logoAlt: "DePauli AG"
+
     },
     {
         title: "Intern",
         company: "DePauli AG",
         description: "● Implemented new designs of 7 e-commerce websites and their static pages by using C#, .NET Core, jQuery, SCSS/Sass, Bootstrap, Jira, MS Azure, Git. ",
         startDate: "Jul 2021",
-        endDate: "Sep 2021"
+        endDate: "Sep 2021",
+        logo: "/logo/depauli.svg",
+        logoAlt: "DePauli AG"
     },
     {
         title: "Intern",
         company: "Akdeniz University \n\n BAUM",
         description: "● Developed a full-stack exam administration tool from the ground up with C#, .NET Core, JavaScript, CSS, and MySQL. ",
         startDate: "Aug 2020",
-        endDate: "Sep 2020"
+        endDate: "Sep 2020",
+        logo: "/logo/akdeniz.png",
+        logoAlt: "Akdeniz University"
     },
     {
         title: "B.Sc. Computer Engineering",
         company: "Akdeniz University",
         description: "",
         startDate: "Sep 2017",
-        endDate: "Jan 2022"
+        endDate: "Jan 2022",
+        logo: "/logo/akdeniz.png",
+        logoAlt: "Akdeniz University"
     }
 ];
 
@@ -81,10 +95,13 @@ const BasicTimeline= () => {
                                 <p>{exp.startDate}</p>
                             </div>
                             <div className="hidden h-full content-center border-b-1 border-gray-500 md:block col-span-2">
+                                <div className="flex">
+                                    {/*<img src={exp.logo} alt={exp.logoAlt} className="h-10 w-10 ml-2 rounded-lg shrink-0 object-contain"/>*/}
+                                    <p className="text-sm ml-2 place-content-end">{exp.company}</p>
+                                </div>
                                 <p className="text-sm ml-2 font-semibold">{exp.title}</p>
-                                <p className="text-sm ml-2">{exp.company}</p>
                             </div>
-                            <div className="mt-4 h-full md:mt-0 col-span-5 whitespace-pre-line border-b-1 border-gray-500 ">
+                            <div className="mt-4 h-full pl-4 md:mt-0 col-span-5 whitespace-pre-line border-b-1 border-gray-500 ">
                                 <p className="text-sm mb-3 md:mb-4" dangerouslySetInnerHTML={{ __html: exp.description }} />
                             </div>
                         </div>
