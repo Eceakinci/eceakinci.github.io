@@ -19,6 +19,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={jakarta.variable} suppressHydrationWarning>
     <head>
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="b867bc9c-6a81-401d-b52b-de4fd0e4bfab"></script>
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
         <title>{metadata.title}</title>
